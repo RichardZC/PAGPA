@@ -1,0 +1,295 @@
+﻿
+@model ITB.VENDIX.BE.Cliente
+<style>
+    .texto {
+        padding-top: 6px;
+    }
+</style>
+<section class="grid_12 clearfix box">
+    <form method="post" action="@Url.Action("Guardar","Cliente")" class=" validate">
+        <div class="grid_6">
+
+            <div class="header">
+                <h2><a href="@Url.Action("Index","Cliente")">Clientes</a></h2>
+            </div>
+            <div class="content">
+                <input type="hidden" name="c.ClienteId" id="ClienteId" value="@Model.ClienteId" />
+                <input type="hidden" name="p.PersonaId" id="PersonaId" value="@Model.PersonaId" />
+
+                <p class="_25 texto ">
+                    <select id="cboTipoPersona" name="p.TipoPersona">
+                        <option value="N" selected>NATURAL</option>
+                        <option value="J">JURIDICO</option>
+                    </select>
+                </p>
+                <p class="_50 texto">
+                    <label for="NroDocumento" id="lblDocumento" class="inline">DNI:</label>
+                    <input type="text" class="required" name="p.NumeroDocumento" id="NroDocumento" value="@Model.Persona.NumeroDocumento" autofocus />
+                </p>
+                <p class="_25  texto">
+                    <label for="txtCodigo" class="inline">Codigo:</label>
+                    <input type="text" class="required" name="p.Codigo" id="txtCodigo" value="@Model.Persona.Codigo" />
+                </p>
+                <p class="_100  texto">
+                    <label for="txtNombre" id="lblNombre" class="inline">Nombre:</label>
+                    <input type="text" class="required" name="p.Nombre" id="txtNombre" value="@Model.Persona.Nombre" />
+                </p>
+                <p class="_50 texto natural">
+                    <label for="txtApePaterno" class="inline">Paterno:</label>
+                    <input type="text" class="required" name="p.ApePaterno" id="txtApePaterno" value="@Model.Persona.ApePaterno" />
+                </p>
+                <p class="_50 texto natural">
+                    <label for="txtApeMaterno" class="inline">Materno:</label>
+                    <input type="text" class="required" name="p.ApeMaterno" id="txtApeMaterno" value="@Model.Persona.ApeMaterno" />
+                </p>
+                @*<p class="_50 texto natural">
+                        <label for="txtFechaNacimiento" class="inline maskDate">Nacimiento:</label>
+                        <input type="date" name="p.FechaNacimiento" id="txtFechaNacimiento" placeholder="DD/MM/YYYY"
+                               value="@if (Model.Persona.FechaNacimiento.HasValue) {<text>@Model.Persona.FechaNacimiento.Value.ToString("dd/MM/yyyy")</text>}" />
+                    </p>*@
+                <p class="_50 texto natural">
+                    <label for="txtFechaNacimiento" class="inline">Fecha Nacimiento:</label>
+                    <input type="date" name="p.FechaNacimiento" class="maskDate" id="txtFechaNacimiento" placeholder="DD/MM/YYYY"
+                           value="" />
+                </p>
+                <p class="_50 texto natural">
+                    <select id="cboSexo" name="p.Sexo">
+                        <option value="M" selected>MASCULINO</option>
+                        <option value="F">FEMENINO</option>
+                    </select>
+                </p>
+                <p class="_50 texto">
+                    <label for="txtcelular1" class="inline">Celular:</label>
+                    <input type="text" name="p.Celular1" id="txtcelular1" pattern="^\d{1,10}$" value="@Model.Persona.Celular1" />
+                </p>
+                <p class="_50  texto">
+                    <label for="txtEmailPersonal" class="inline">Correo:</label>
+                    <input type="text" name="p.EmailPersonal" id="txtEmailPersonal" value="@Model.Persona.EmailPersonal" />
+                </p>
+
+                <p class="_100 texto">
+                    <label for="txtDireccion" class="inline">Domicilio:</label>
+                    <input type="text" name="p.Direccion" id="txtDireccion" value="@Model.Persona.Direccion" />
+                </p>
+                <p class="_100 texto">
+                    <label for="txtDireccionRef" class="inline">Referencia Domicilio:</label>
+                    <input type="text" name="p.DireccionRef" id="txtDireccionRef" value="@Model.Persona.DireccionRef" />
+                </p>
+                <p class="_100 texto">
+                    <label for="txtUbicacion" class="inline">Distrito:</label>
+                    <input type="text" name="txtUbicacion" id="txtUbicacion" placeholder="Buscar por Distrito" value="@ViewBag.Distrito" />
+                    <input type="hidden" name="p.DistritoId" id="DistritoId" value="@Model.Persona.DistritoId" />
+                </p>
+                <p class="_100 texto">
+                    <label for="txtNegocio" class="inline">Dirección de Negocio:</label>
+                    <input type="text" name="c.DireccionNegocio" id="txtNegocio" value="@Model.DireccionNegocio" />
+                </p>
+                <p class="_100 texto">
+                    <label for="txtNegocioRef" class="inline">Referencia Negocio:</label>
+                    <input type="text" name="c.DireccionNegocioRef" id="txtNegocioRef" value="@Model.DireccionNegocioRef" />
+                </p>
+
+            </div>
+
+
+
+        </div>
+        <div class="grid_6">
+
+            <div class="header">
+                <h2>CALIFICACION: @Model.Calificacion</h2>
+            </div>
+            <div class="content">
+
+                <p class="_100 texto">
+                    <label>Giro de Negocio:</label>
+                    @Html.DropDownList("c.ActividadEconId", (IEnumerable<SelectListItem>)ViewBag.cboGiroNegocio, new { @class = "search" })
+                </p>
+                <p id="pnlOtros" class="_100 texto" >
+                    <label for="txtOtros" class="inline">OTROS:</label>
+                    <input type="text" name="txtOtros" id="txtOtros" required/>
+                </p>
+                @*<p class="_50 texto">
+                    <label>Calificacion:</label>
+                    <select id="cboCalificacion" name="c.Calificacion" @if (ViewBag.Aprobador1 == 0) {<text>disabled</text> }>
+                        <option value="A" selected>A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                    </select>
+                </p>*@
+                <p class="_50 texto natural">
+                    <label>Estado Civil:</label>
+                    @Html.DropDownList("p.EstadoCivilId", (IEnumerable<SelectListItem>)ViewBag.cboEstadoCivil, "--Seleccionar--")
+                </p>
+                <p class="_50 texto">
+                    <label>Tipo de Vivienda:</label>
+                    @Html.DropDownList("p.TipoViviendaId", (IEnumerable<SelectListItem>)ViewBag.cboTipoVivienda, "--Seleccionar--")
+                </p>
+               
+                <p class="_100 texto natural">
+                    <label for="txtConyugue" class="inline">Conyugue:</label>
+                    <input type="text" name="p.Conyugue" id="txtConyugue" value="@Model.Persona.Conyugue" />
+                </p>
+                <p class="_50 texto natural">
+                    <label for="txtDNIConyugue" class="inline">DNI Conyugue:</label>
+                    <input type="text" name="p.ConyugueDNI" id="txtDNIConyugue" value="@Model.Persona.ConyugueDNI" />
+                </p>
+                <p class="_50 texto natural">
+                    <label for="txtCelularConyugue" class="inline">Celular:</label>
+                    <input type="text" name="p.ConyugueCelular" id="txtCelularConyugue" value="@Model.Persona.ConyugueCelular" />
+                </p>
+                <p class="_100 texto">
+                    <label for="txtAval" class="inline">Aval:</label>
+                    <input type="text" name="c.Aval" id="txtAval" value="@Model.Aval" />
+                </p>
+                <p class="_50 texto">
+                    <label for="txtDNIAval" class="inline">DNI Aval:</label>
+                    <input type="text" name="c.AvalDNI" id="txtDNIAval" value="@Model.AvalDNI" />
+                </p>
+
+                <p class="_50 texto">
+                    <label for="txtCelularAval" class="inline">Celular:</label>
+                    <input type="text" name="c.AvalCelular" id="txtCelularAval" value="@Model.AvalCelular" />
+                </p>
+                <p class="_100 texto">
+                    <label for="Nota" class="inline">Observación:</label>
+                    <input type="text" id="Nota" name="c.Nota" style="height: 45px;" value="@Model.Nota" />
+                </p>
+                <p class="_100 texto">
+                    <label for="chkActivo" style="display: inline">Activo</label>
+                    <input type="checkbox" name="chkActivo"  @if (Model.Estado) { <text> checked</text> } />
+                </p>
+            </div>
+
+            <div class="actions">
+                @*<div class="left">
+                        <input type="reset" value="Cancel" />
+                    </div>*@
+                <div class="right">
+                    <input type="submit" value="Guardar" />
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+
+@section scripts{
+
+    <script>
+        $$.ready(function () {
+
+            @if (Model.PersonaId>0) {
+                <text>
+            $("#txtFechaNacimiento").val('@(Model.Persona.FechaNacimiento.HasValue?Model.Persona.FechaNacimiento.Value.ToString("dd/MM/yyyy"):"")');
+            $("#cboTipoPersona").prop("disabled", true).trigger("liszt:updated");
+            $("#p_TipoViviendaId").val('@Model.Persona.TipoViviendaId').trigger("liszt:updated");
+            $("#p_EstadoCivilId").val('@Model.Persona.EstadoCivilId').trigger("liszt:updated");
+            </text>
+            }
+            @if (Model.ClienteId>0) {
+                <text>
+            $("#c_ActividadEconId").val(@Model.ActividadEconId).trigger("liszt:updated");
+            $("#cboCalificacion").val('@Model.Calificacion').trigger("liszt:updated");
+            </text>
+            }
+            $("#pnlOtros").hide();
+            $("#c_ActividadEconId").change(function () {
+                if ($("#c_ActividadEconId option:selected").text() == "OTROS") {
+                    $("#pnlOtros").show();
+                    $("#txtOtros").focus();
+                } else {
+                    $("#pnlOtros").hide();
+                }
+            });
+
+            $("#cboTipoPersona").change(function () {
+                if ($("#cboTipoPersona").val() == "N") {
+                    $("#lblDocumento").text("DNI:");
+                    $("#lblNombre").text("Nombres:");
+                    $(".natural").show();
+                    $("#NroDocumento").mask("99999999");
+                } else {
+                    $("#lblDocumento").text("RUC:");
+                    $("#lblNombre").text("Rz Social:");
+                    $(".natural").hide();
+                    $("#NroDocumento").mask("99999999999");
+                }
+                $("#txtDocumento").focus();
+            });
+
+            $("#NroDocumento").mask("99999999").keypress(function () {
+                if (event.which == 13) {
+                    event.preventDefault();
+                    $(this).trigger('blur');
+                }
+            }).blur(function () {
+
+                if (isNaN($(this).val())) return false;
+
+                if ($(this).val().length > 0) {
+
+                    $.data(document.body, 'NumDocumento', $(this).val());
+                    if ($(this).val() == '@Model.Persona.NumeroDocumento')
+                        return;
+                    $.ajax({
+                        url: "@Url.Action("ValidarClienteDNI", "Cliente")",
+                        data: { pDNI: $(this).val() },
+                        success: function (rpta) {
+                            if (rpta) {
+                                Vendix.Mensaje("Ya existe un Cliente  con este DNI");
+                                $("#txtNombre").val('');
+                                $("#txtApePaterno").val('');
+                                $("#txtApeMaterno").val('');
+                                $("#NroDocumento").val('').focus();
+                                return;
+                            }
+
+                            @*$.ajax({
+                                url: "@Url.Action("ObtenerClienteDNI", "Cliente")",
+                                data: { pDNI: $.data(document.body, 'NumDocumento') },
+                                success: function (rpta) {
+                                    if (rpta == null) {
+                                        $("#txtNombre").val('');
+                                        $("#txtApePaterno").val('');
+                                        $("#txtApeMaterno").val('');
+                                        $("#txtEmailPersonal").val('');
+                                        $("#txtcelular1").val('');
+                                        $("#txtFechaNacimiento").val('');
+                                        //$("#txtFechaCaptacion").val('');
+                                        $("#txtDireccion").val('');
+                                        $("#txtNombre").focus();
+                                        return;
+                                    }
+                                    $("#PersonaId").val(rpta.Persona.PersonaId);
+                                    $("#txtNombre").val(rpta.Persona.Nombre);
+                                    $("#txtApePaterno").val(rpta.Persona.ApePaterno);
+                                    $("#txtApeMaterno").val(rpta.Persona.ApeMaterno);
+                                    $("#txtEmailPersonal").val(rpta.Persona.EmailPersonal);
+                                    $("#txtcelular1").val(rpta.Persona.Celular1);
+                                    $("#txtFechaNacimiento").val(rpta.FNacimiento);
+                                    $("#txtDireccion").val(rpta.Persona.Direccion);
+                                    $("#cboSexo").val(rpta.Persona.Sexo).trigger("liszt:updated");
+
+                                    $("#txtNombre").focus();
+                                }
+                            });*@
+                        }
+                    });
+                }
+            });
+
+            $("#txtUbicacion").autocomplete({
+                source: "@Url.Action("BuscarDistrito", "Cliente")",
+                minLength: 2,
+                select: function (event, ui) {
+                    //console.log(ui.item);
+                    event.preventDefault();
+                    $("#txtUbicacion").val(ui.item.value);
+                    $("#DistritoId").val(ui.item.id);
+                }
+            });
+        });
+    </script>
+}
+
+

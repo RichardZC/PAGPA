@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6054577C-75F1-46D5-B9D3-10962A343763}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ITB.VENDIX.BL</RootNamespace>
+    <AssemblyName>ITB.VENDIX.BL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Almacen\AlmacenBL.cs" />
+    <Compile Include="Almacen\ArticuloBL.cs" />
+    <Compile Include="Almacen\TransferenciaBL.cs" />
+    <Compile Include="Almacen\TransferenciaSerieBL.cs" />
+    <Compile Include="Clases.cs" />
+    <Compile Include="Constante.cs" />
+    <Compile Include="Creditos\BovedaBL.cs" />
+    <Compile Include="Creditos\BovedaMovTempBL.cs" />
+    <Compile Include="Creditos\CajaBL.cs" />
+    <Compile Include="Creditos\CajaDiarioBL.cs" />
+    <Compile Include="Creditos\CargoBL.cs" />
+    <Compile Include="Creditos\CreditoBL.cs" />
+    <Compile Include="Creditos\CuentaxCobrarBL.cs" />
+    <Compile Include="Creditos\GastosAdmBL.cs" />
+    <Compile Include="Creditos\BovedaMovBL.cs" />
+    <Compile Include="Creditos\MovimientoCajaBL.cs" />
+    <Compile Include="Creditos\PlanPagoBL.cs" />
+    <Compile Include="Creditos\ProductoBL.cs" />
+    <Compile Include="DistritoBL.cs" />
+    <Compile Include="Helper\cacheService.cs" />
+    <Compile Include="Helper\Globales.cs" />
+    <Compile Include="Helper\GridDataRequest.cs" />
+    <Compile Include="Helper\LinqExtensions.cs" />
+    <Compile Include="Maestro\ClienteBL.cs" />
+    <Compile Include="Maestro\OcupacionBL.cs" />
+    <Compile Include="Maestro\TipoOperacionBL.cs" />
+    <Compile Include="Ventas\ListaPrecioBL.cs" />
+    <Compile Include="Almacen\MarcaBL.cs" />
+    <Compile Include="Maestro\MenuBL.cs" />
+    <Compile Include="Almacen\ModeloBL.cs" />
+    <Compile Include="Almacen\MovimientoBL.cs" />
+    <Compile Include="Almacen\MovimientoDetBL.cs" />
+    <Compile Include="Almacen\MovimientoDocBL.cs" />
+    <Compile Include="Maestro\OficinaBL.cs" />
+    <Compile Include="Ventas\OrdenVentaBL.cs" />
+    <Compile Include="Ventas\OrdenVentaDetBL.cs" />
+    <Compile Include="Maestro\PersonaBL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helper\Repositorio.cs" />
+    <Compile Include="Maestro\ReporteBL.cs" />
+    <Compile Include="Maestro\RolBL.cs" />
+    <Compile Include="Maestro\RolMenuBL.cs" />
+    <Compile Include="Ventas\SerieArticuloBL.cs" />
+    <Compile Include="Ventas\TargetaPuntosBL.cs" />
+    <Compile Include="Maestro\TipoArticuloBL.cs" />
+    <Compile Include="Maestro\TipoDocumentoBL.cs" />
+    <Compile Include="Maestro\TipoMovimientoBL.cs" />
+    <Compile Include="Maestro\UsuarioBL.cs" />
+    <Compile Include="Maestro\UsuarioOficinaBL.cs" />
+    <Compile Include="Maestro\UsuarioRolBL.cs" />
+    <Compile Include="Maestro\ValorTablaBL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITB.VENDIX.BE\ITB.VENDIX.BE.csproj">
+      <Project>{6a5d29ae-ee19-4b3d-9f24-5b0f427f2a54}</Project>
+      <Name>ITB.VENDIX.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ITB.VENDIX.DA\ITB.VENDIX.DA.csproj">
+      <Project>{e9051714-3bc0-4589-97b4-c7ce387dfc34}</Project>
+      <Name>ITB.VENDIX.DA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

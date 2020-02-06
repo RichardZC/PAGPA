@@ -1,0 +1,314 @@
+﻿<div class="grid_4">
+    <form method="post" action="#" class="box validate">
+        <div class="header">
+            <h2><img class="icon" src="~/img/icons/packs/fugue/16x16/sticky-note.png">Reporte Creditos</h2>
+        </div>
+
+        <div class="content">
+
+            <p class="_100 small" style="padding-top: 10px;">
+                @Html.DropDownList("cboOficina", "TODOS")
+            </p>
+            <p class="_100 small" style="padding-top: 10px;">
+                @Html.DropDownList("cboGestor2", "TODOS")
+            </p>
+            <p class="_100 small">
+                <select id="cboEstadoCredito">
+                    <option value="CRE">SOLICITUD CREDITO</option>
+                    <option value="PEN">PENDIENTE</option>
+                    <option value="DES">DESEMBOLSADO</option>
+                    <option value="PAG">PAGADO</option>
+                    <option value="REP">REPROGRAMADO</option>
+                    <option value="ANU">ANULADO</option>
+                </select>
+            </p>
+            <p class="_100 small">
+                <label for="txtFechaIni" class="inline">Fecha Inicial:</label>
+                <input data-error-type="inline" type="date" class="required maskDate" name="txtFechaIni" id="txtFechaIni" placeholder="DD/MM/YYYY" value="@ITB.VENDIX.BL.VendixGlobal.GetFecha().AddDays(- ITB.VENDIX.BL.VendixGlobal.GetFecha().Day + 1).ToShortDateString()" />
+            </p>
+
+            <p class="_100 small">
+                <label for="txtFechaFin" class="inline">Fecha Final:</label>
+                <input data-error-type="inline" type="date" class="required maskDate" name="txtFechaFin" id="txtFechaFin" placeholder="DD/MM/YYYY" value="@ITB.VENDIX.BL.VendixGlobal.GetFecha().AddDays(- ITB.VENDIX.BL.VendixGlobal.GetFecha().Day +1).AddMonths(1).AddDays(-1).ToShortDateString()" />
+            </p>
+
+        </div>
+        <br />
+        <div class="actions">
+            <div class="right">
+                <input type="submit" value="Reporte Créditos" id="btnRptCredito" />
+            </div>
+        </div>
+        <div class="actions">
+            <div class="right">
+                <input type="checkbox" name="chkTodo" id="chkTodo" /><label for="chkTodo">TODOS </label>
+                <input type="submit" value="Reporte Rentabilidad" id="btnRptRentabilidad" />
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="grid_4">
+    <form method="post" action="#" class="box validate">
+        <div class="header">
+            <h2><img class="icon" src="~/img/icons/packs/fugue/16x16/sticky-note.png">Reporte Morosidad</h2>
+        </div>
+
+        <div class="content">
+
+            <p class="_100 small" style="padding-top: 10px;">
+                @Html.DropDownList("cboOficina1", "TODOS")
+            </p>
+
+            <p class="_100 small">
+                <label for="txtHastaFecha" class="inline">Hasta la fecha:</label>
+                <input data-error-type="inline" type="date" class="required maskDate" name="txtHastaFecha" id="txtHastaFecha" placeholder="DD/MM/YYYY" value="@ITB.VENDIX.BL.VendixGlobal.GetFecha().ToShortDateString()" />
+            </p>
+
+            <p class="_100 small">
+                <label for="txtDiasAtrazoIni" class="inline">Dias de Atrazo INICIO:</label>
+                <input data-error-type="inline" type="number" class="required" name="txtDiasAtrazoIni" id="txtDiasAtrazoIni" value="1" />
+            </p>
+            <p class="_100 small">
+                <label for="txtDiasAtrazoFin" class="inline">Dias de Atrazo FINAL:</label>
+                <input data-error-type="inline" type="number" class="required" name="txtDiasAtrazoFin" id="txtDiasAtrazoFin" value="9999" />
+            </p>
+
+        </div>
+        <br />
+        <div class="actions">
+            <div class="right">
+                <input type="submit" value="Créditos con morosidad" id="btnRptCreditoMora" />
+            </div>
+        </div>
+    </form>
+</div>
+<div class="grid_4">
+    <form method="post" action="#" class="box validate">
+        <div class="header">
+            <h2><img class="icon" src="~/img/icons/packs/fugue/16x16/sticky-note.png">Creditos Aprobados</h2>
+        </div>
+
+        <div class="content">
+
+            <p class="_100 small" style="padding-top: 10px;">
+                @Html.DropDownList("cboOficina4", "TODOS")
+            </p>
+            <p class="_100 small" style="padding-top: 10px;">
+                @Html.DropDownList("cboGestor", "TODOS")
+            </p>
+            <p class="_100 small">
+                <label for="txtFechaAprobacion" class="inline">Fecha:</label>
+                <input data-error-type="inline" type="date" class="required maskDate" name="txtFechaAprobacion" id="txtFechaAprobacion" placeholder="DD/MM/YYYY" value="@ITB.VENDIX.BL.VendixGlobal.GetFecha().AddDays(- ITB.VENDIX.BL.VendixGlobal.GetFecha().Day + 1).ToShortDateString()" />
+            </p>
+        </div>
+        <br />
+        <div class="actions">
+            <div class="right">
+                <input type="submit" value="PDF" id="btnRptCreditoAprobado" />
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="grid_4">
+    <form method="post" action="#" class="box validate">
+        <div class="header">
+            <h2><img class="icon" src="~/img/icons/packs/fugue/16x16/sticky-note.png">Observados y morosos por Gestor</h2>
+        </div>
+
+        <div class="content">
+
+            <p class="_100 small" style="padding-top: 10px;">
+                @Html.DropDownList("cboOficina3", "TODOS")
+            </p>            
+            <p class="_100 small" style="padding-top: 10px;">
+                @Html.DropDownList("cboUsuario", "TODOS")
+            </p>  
+        </div>
+        <br />
+        <div class="actions">
+            <div class="left">
+                <input type="submit" value="Morosidad" id="btnRptMorosidadGestor" />
+            </div>
+            <div class="right">                
+                <input type="submit" value="OBS EXCEL" id="btnRptCreditoObservadoXls" />
+                <input type="submit" value="OBS PDF" id="btnRptCreditoObservadoPdf" />
+            </div>
+        </div>
+    </form>
+</div>
+<div class="grid_4">
+    <form method="post" action="#" class="box validate">
+        <div class="header">
+            <h2><img class="icon" src="~/img/icons/packs/fugue/16x16/sticky-note.png">Reporte Central de Riesgos</h2>
+        </div>
+
+        <div class="content">
+
+            <p class="_100 small" style="padding-top: 10px;">
+                @Html.DropDownList("cboOficina2", "TODOS")
+            </p>
+
+            <p class="_100 small">
+                <select id="cboAnio">
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                </select>
+            </p>
+            <p class="_100 small">
+                <select id="cboMes">
+                    <option value="1">Enero</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+            </p>
+
+        </div>
+        <br />
+        <div class="actions">
+            <div class="right">
+                <input type="submit" value="Reporte Central de Riesgo" id="btnCentralRiesgo" />
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#cboAnio").val(@ITB.VENDIX.BL.VendixGlobal.GetFecha().Year).trigger("liszt:updated");
+        $("#cboMes").val(@ITB.VENDIX.BL.VendixGlobal.GetFecha().AddMonths(-1).Month).trigger("liszt:updated");
+
+        $('#btnCentralRiesgo').click(function () {
+            var oficina = $('#cboOficina2').val();
+            if (oficina.length == 0) oficina = null;
+
+            window.location.href = '@Url.Action("ReporteCentrarRiegoTXT", "Reporte")'
+                + '?pOficinaid=' + oficina
+                + '&pAnio=' + $("#cboAnio").val()
+                + '&pMes=' + $("#cboMes").val();
+            return false;
+        });
+
+        $("#btnRptCredito").click(function () {
+            event.preventDefault();
+            var oficina = $('#cboOficina').val();
+            if (oficina.length == 0) oficina = null;
+            var usuario = $('#cboGestor2').val();
+            if (usuario.length == 0) usuario = null;
+
+            var ruta = '@Url.Action("ReporteCredito", "Reporte")'
+                + '?pOficinaid=' + oficina
+                + '&pGestorid=' + usuario
+                + '&pEstadoCredito=' + $("#cboEstadoCredito").val()
+                + '&pFechaIni=' + $('#txtFechaIni').val()
+                + '&pFechaFin=' + $('#txtFechaFin').val();
+
+            //alert(ruta );
+            window.open(ruta);
+            return false;
+        });
+        $("#btnRptRentabilidad").click(function () {
+            event.preventDefault();
+            var oficina = $('#cboOficina').val();
+            if (oficina.length == 0) oficina = null;
+
+            var ruta = '@Url.Action("ReporteCreditoRentabilidad", "Reporte")'
+                + '?pFechaIni=' + $('#txtFechaIni').val()
+                + '&pFechaFin=' + $('#txtFechaFin').val()
+                + '&indTodos=' + $("#chkTodo").prop('checked')
+                + '&pOficinaid=' + oficina;
+            //alert(ruta );
+            window.open(ruta);
+            return false;
+        });
+        $("#btnRptCreditoAprobado").click(function () {
+            event.preventDefault();
+            var oficina = $('#cboOficina4').val();
+            if (oficina.length == 0) oficina = null;
+            var usuario = $('#cboGestor').val();
+            if (usuario.length == 0) usuario = null;
+
+            var ruta = '@Url.Action("ReporteCreditoAprobado", "Reporte")'
+                + '?pFecha=' + $('#txtFechaAprobacion').val()
+                + '&pUsuarioid=' + usuario
+                + '&pOficinaid=' + oficina;
+            //alert(ruta );
+            window.open(ruta);
+            return false;
+        });
+        $("#btnRptCreditoMora").click(function () {
+            event.preventDefault();
+            var oficina = $('#cboOficina1').val();
+            if (oficina.length == 0) oficina = null;
+
+            var ruta = '@Url.Action("ReporteCreditoMorosidad", "Reporte")'
+                + '?pOficinaid=' + oficina
+                + '&pFechaHasta=' + $('#txtHastaFecha').val()
+                + '&pDiasAtrazoIni=' + $('#txtDiasAtrazoIni').val()
+                + '&pDiasAtrazoFin=' + $('#txtDiasAtrazoFin').val();
+            window.open(ruta);
+            return false;
+        });
+        $("#btnRptMorosidadGestor").click(function () {
+            event.preventDefault();
+            var oficina = $('#cboOficina3').val();
+            if (oficina.length == 0) oficina = null;
+
+            var usuario = $('#cboUsuario').val();
+            if (usuario.length == 0) {
+                Vendix.Mensaje('Seleccione un Gestor');
+                return false;
+            };
+
+            var ruta = '@Url.Action("ReporteMorosidadGestor", "Reporte")'
+                + '?pOficinaId=' + oficina + '&pUsuarioId=' + usuario;
+            window.open(ruta);
+            return false;
+        });
+        $("#btnRptCreditoObservadoPdf").click(function () {
+            event.preventDefault();
+            window.open(obtenerRutaCreditoObs('PDF'));
+            return false;
+        });
+
+        $("#btnRptCreditoObservadoXls").click(function () {
+            event.preventDefault();
+            window.open(obtenerRutaCreditoObs('Excel'));
+            return false;
+        });
+        function obtenerRutaCreditoObs(tipo) {
+            var oficina = $('#cboOficina3').val();
+            if (oficina.length == 0) oficina = null;
+
+            var usuario = $('#cboUsuario').val();
+            if (usuario.length == 0) usuario = null;
+
+            var ruta = '@Url.Action("ReporteCreditoObservado", "Reporte")'
+                + '?pOficinaId=' + oficina + '&pUsuarioId=' + usuario
+                + '&pTipo=' + tipo;
+            return ruta;
+        }
+
+    });
+</script>
