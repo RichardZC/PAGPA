@@ -1806,6 +1806,7 @@
     <Content Include="img\logo-light.png" />
     <Content Include="img\logo-mobile.png" />
     <Content Include="img\logo.png" />
+    <Content Include="img\unsch.jpg" />
     <Content Include="js\app.js" />
     <Content Include="js\jquery.form.js" />
     <Content Include="js\libs\jquery-1.7.2.min.js" />
@@ -2224,6 +2225,7 @@
     <Content Include="Views\Cliente\Mantener.cshtml" />
     <Content Include="Views\Reporte\CobrosdelDia.cshtml" />
     <Content Include="Views\CreditoAprobar\Index.cshtml" />
+    <Content Include="Views\Reporte\ConstanciaOrdenPago.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

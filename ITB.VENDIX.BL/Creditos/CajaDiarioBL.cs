@@ -536,7 +536,7 @@ namespace ITB.VENDIX.BL
                     var oCaja = CajaBL.Obtener(cajaDiario.CajaId);
                     oCaja.IndAbierto = true;
                     CajaBL.Actualizar(oCaja);
-                    ActualizarMontoPorCobrar(pUsuarioAsignadoId);
+                    //ActualizarMontoPorCobrar(pUsuarioAsignadoId);
 
                     if (pSaldoInicial>0)
                     {
@@ -561,7 +561,7 @@ namespace ITB.VENDIX.BL
                     scope.Complete();
                     return string.Empty;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     scope.Dispose();
                     throw;

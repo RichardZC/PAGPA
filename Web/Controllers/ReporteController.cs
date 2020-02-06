@@ -30,6 +30,11 @@ namespace VendixWeb.Controllers
 
             return View(new ReporteConstanciaAlmacen { Cabecera = mov, Detalle = det });
         }
+        public ActionResult ConstanciaOrdenPago(int pOrdenId)
+        {
+            var mov = OrdenVentaBL.Obtener(x=>x.OrdenVentaId== pOrdenId, includeProperties: "OrdenVentaDet,Persona");
+            return View(mov);
+        }
         public ActionResult CobrosdelDia()
         {
             //var mov = MovimientoBL.ObtenerEntradaSalida(pMovimientoId);

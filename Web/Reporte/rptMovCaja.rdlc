@@ -43,8 +43,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>User</rd:DefaultName>
-        <Top>8.58634cm</Top>
-        <Left>1.90502cm</Left>
+        <Top>6.75135cm</Top>
+        <Left>1.90501cm</Left>
         <Height>0.71113cm</Height>
         <Width>6.01895cm</Width>
         <Style>
@@ -91,8 +91,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>3.81056cm</Top>
-        <Left>1.90501cm</Left>
+        <Top>1.97557cm</Top>
+        <Left>1.905cm</Left>
         <Height>0.6cm</Height>
         <Width>6.01895cm</Width>
         <ZIndex>1</ZIndex>
@@ -151,8 +151,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>PersonaId</rd:DefaultName>
-        <Top>4.58694cm</Top>
-        <Left>1.90501cm</Left>
+        <Top>2.75195cm</Top>
+        <Left>1.905cm</Left>
         <Height>0.73053cm</Height>
         <Width>6.01896cm</Width>
         <ZIndex>2</ZIndex>
@@ -187,8 +187,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Producto</rd:DefaultName>
-        <Top>5.42933cm</Top>
-        <Left>1.90501cm</Left>
+        <Top>3.59434cm</Top>
+        <Left>1.905cm</Left>
         <Height>0.6cm</Height>
         <Width>6.01895cm</Width>
         <ZIndex>3</ZIndex>
@@ -230,8 +230,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ImportePago</rd:DefaultName>
-        <Top>7.93488cm</Top>
-        <Left>1.90502cm</Left>
+        <Top>6.09989cm</Top>
+        <Left>1.90501cm</Left>
         <Height>0.50289cm</Height>
         <Width>6.01895cm</Width>
         <ZIndex>4</ZIndex>
@@ -276,8 +276,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ImportePago1</rd:DefaultName>
-        <Top>7.15849cm</Top>
-        <Left>5.79085cm</Left>
+        <Top>5.3235cm</Top>
+        <Left>5.79084cm</Left>
         <Height>0.6cm</Height>
         <Width>2.13312cm</Width>
         <ZIndex>5</ZIndex>
@@ -309,8 +309,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Articulo</rd:DefaultName>
-        <Top>6.09989cm</Top>
-        <Left>1.90502cm</Left>
+        <Top>4.2649cm</Top>
+        <Left>1.90501cm</Left>
         <Height>1.03038cm</Height>
         <Width>6.01894cm</Width>
         <ZIndex>6</ZIndex>
@@ -344,8 +344,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Concepto</rd:DefaultName>
-        <Top>7.15849cm</Top>
-        <Left>1.90502cm</Left>
+        <Top>5.3235cm</Top>
+        <Left>1.90501cm</Left>
         <Height>0.6cm</Height>
         <Width>3.85055cm</Width>
         <ZIndex>7</ZIndex>
@@ -400,8 +400,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>User</rd:DefaultName>
-        <Top>8.58634cm</Top>
-        <Left>12.84434cm</Left>
+        <Top>6.75135cm</Top>
+        <Left>12.84433cm</Left>
         <Height>0.71113cm</Height>
         <Width>6.01895cm</Width>
         <ZIndex>8</ZIndex>
@@ -449,8 +449,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>3.81056cm</Top>
-        <Left>12.84433cm</Left>
+        <Top>1.97557cm</Top>
+        <Left>12.84432cm</Left>
         <Height>0.6cm</Height>
         <Width>6.01895cm</Width>
         <ZIndex>9</ZIndex>
@@ -509,8 +509,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>PersonaId</rd:DefaultName>
-        <Top>4.58694cm</Top>
-        <Left>12.84433cm</Left>
+        <Top>2.75195cm</Top>
+        <Left>12.84432cm</Left>
         <Height>0.73053cm</Height>
         <Width>6.01896cm</Width>
         <ZIndex>10</ZIndex>
@@ -545,8 +545,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Producto</rd:DefaultName>
-        <Top>5.42933cm</Top>
-        <Left>12.84433cm</Left>
+        <Top>3.59434cm</Top>
+        <Left>12.84432cm</Left>
         <Height>0.6cm</Height>
         <Width>6.01895cm</Width>
         <ZIndex>11</ZIndex>
@@ -588,8 +588,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ImportePago</rd:DefaultName>
-        <Top>7.93488cm</Top>
-        <Left>12.84434cm</Left>
+        <Top>6.09989cm</Top>
+        <Left>12.84433cm</Left>
         <Height>0.50289cm</Height>
         <Width>6.01895cm</Width>
         <ZIndex>12</ZIndex>
@@ -634,8 +634,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ImportePago1</rd:DefaultName>
-        <Top>7.15849cm</Top>
-        <Left>16.73017cm</Left>
+        <Top>5.3235cm</Top>
+        <Left>16.73016cm</Left>
         <Height>0.6cm</Height>
         <Width>2.13312cm</Width>
         <ZIndex>13</ZIndex>
@@ -667,8 +667,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Articulo</rd:DefaultName>
-        <Top>6.09989cm</Top>
-        <Left>12.84434cm</Left>
+        <Top>4.2649cm</Top>
+        <Left>12.84433cm</Left>
         <Height>1.03038cm</Height>
         <Width>6.01894cm</Width>
         <ZIndex>14</ZIndex>
@@ -702,8 +702,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Concepto</rd:DefaultName>
-        <Top>7.15849cm</Top>
-        <Left>12.84434cm</Left>
+        <Top>5.3235cm</Top>
+        <Left>12.84433cm</Left>
         <Height>0.6cm</Height>
         <Width>3.85055cm</Width>
         <ZIndex>15</ZIndex>

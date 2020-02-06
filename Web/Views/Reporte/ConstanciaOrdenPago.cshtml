@@ -1,0 +1,104 @@
+﻿@model ITB.VENDIX.BE.OrdenVenta
+
+<div class="grid_12">
+    <div class="box">
+        <div class="header">
+            <h2> 
+                <a href="@Url.Action("OrdenesVenta", "OrdenVenta")" class="button">Consultar Ordenes</a>
+            </h2>
+           
+
+        </div>
+        <div class="content invoice">
+            <img src="~/img/unsch.jpg" width="200" height="100" style="float: left" />
+            <h4>Planteles de Aplicacion Guaman Poma de Ayala</h4>
+            <h4>APAFA 2020</h4>
+            <h3>ESQUELA DE PAGOS @Model.OrdenVentaId</h3>
+            <div class="supplier">
+                <table>
+                    <tr>
+                        <td><span>ESTUDIANTE</span></td>
+                        <td style="width: 15px">:</td>
+                        <td><strong>@Model.Persona.NombreCompleto</strong></td>
+                    </tr>
+                    @*<tr>
+                            <td><span>ALMACEN</span></td>
+                            <td>:</td>
+                            <td><strong></strong></td>
+                        </tr>
+                        <tr>
+                            <td><span>OBSERVACION</span></td>
+                            <td>:</td>
+                            <td><strong>@Model.Cabecera.Observacion</strong></td>
+                        </tr>*@
+                </table>
+            </div>
+            <div class="customer">
+                <table>
+                    <tr>
+                        <td style="text-align: left"><span>FECHA:</span></td>
+                        <td style="width: 15px">:</td>
+                        <td style="text-align: left"><strong>@Model.FechaReg.ToString()</strong></td>
+                    </tr>
+                    @*<tr>
+                            <td style="text-align: left"><span>DOCUMENTOS</span></td>
+                            <td>:</td>
+                            <td style="text-align: left"><strong>@Model.Cabecera.Documento</strong></td>
+                        </tr>*@
+                </table>
+            </div>
+
+            <div class="clearfix"></div>
+            <br />
+            @*<div class="details">
+                    <div class="highlighted">
+                        <span>Fecha Operación:</span> <strong>@Model.Cabecera.Fecha.ToShortDateString()</strong>
+                    </div>
+                    <div>
+                        <span>Estado:</span> <strong>@Model.Cabecera.Estado</strong>
+                    </div>
+                    <div>
+                        <span>Total Importe:</span> <strong>S/. @Model.Cabecera.Importe</strong>
+                    </div>
+                </div>*@
+
+            <table class="styled borders">
+                <thead>
+                    <tr>
+                        <th>Cant</th>
+                        <th>Concepto</th>
+                        <th>Dsct.</th>
+                        <th>Importe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.OrdenVentaDet)
+                    {
+                        <tr>
+                            <td style="font-size: 8px; text-align:center">@item.Cantidad</td>
+                            <td style="font-size: 8px">@item.Descripcion</td>
+                            <td style="font-size: 8px">@item.Descuento</td>
+                            <td style="font-size: 8px; text-align:center">@item.Subtotal</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="total">
+                <span>Total</span><strong>S/. @Model.TotalNeto</strong>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="notes">
+                <h5>Nota:</h5>
+                <p>1.Realizar el Pago de la esquela en la CAJA PIURA en el Jr. San Martin 999, a la cuenta ##########</p>
+                <p>2. Levar el voucher al APAFA para realizar la matricula</p>
+            </div>
+
+        </div>
+        <!-- End of .content -->
+
+    </div>
+    <!-- End of .box -->
+</div>

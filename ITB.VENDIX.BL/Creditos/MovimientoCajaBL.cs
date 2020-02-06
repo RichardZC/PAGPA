@@ -156,7 +156,7 @@ namespace ITB.VENDIX.BL
                                  User = mc.Usuario.NombreUsuario,
                                  FechaReg = mc.FechaReg,
                                  Oficina = mc.CajaDiario.Caja.Oficina.Denominacion,
-                                 Producto = "CREDIEMPRENDE HOGAR - " + mc.Descripcion,
+                                 Producto = mc.Descripcion,
                                  ImportePago = mc.ImportePago,
                                  Articulo = listaart
                              };
