@@ -30,12 +30,12 @@ namespace ITB.VENDIX.BL
                     {
                         OrdenVentaId = ov.OrdenVentaId,
                         FechaReg = ov.FechaReg,
-                        Cliente = ov.Persona.NombreCompleto,
+                        Cliente = ov.Persona.NombreCompleto + " - " + ov.Persona.Direccion,
                         TotalNeto = ov.TotalNeto,
                         TotalDescuento = ov.TotalDescuento,
                         TipoVenta = ov.TipoVenta,
                         Estado = ov.Estado,
-                        Tags = SqlFunctions.StringConvert((double)ov.OrdenVentaId) + " " + ov.Persona.NombreCompleto,
+                        Tags = SqlFunctions.StringConvert((double)ov.OrdenVentaId) + " " + ov.Persona.NombreCompleto + " " + ov.Persona.Direccion,
                         EstadoCredito = (subpet == null ? String.Empty : subpet.Estado)
                     };
                 query = query.Where(sfiltro);
